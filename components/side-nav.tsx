@@ -14,6 +14,14 @@ export const SideNav: React.FC = () => {
         <h2 className='text-2xl font-semibold'>Où boire à Brest ?</h2>
         <EstablishmentLinks />
       </div>
+      <div className='flex items-center justify-between px-4 py-4 text-start'>
+        <h2 className='text-2xl font-semibold'>Explorer</h2>
+        <div className='flex items-center justify-center pr-4'>
+          <button className='flex items-center gap-2 rounded-lg bg-violet-500 px-4 py-2 text-sm font-bold text-white transition-transform hover:scale-105'>
+            Filtrer
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
