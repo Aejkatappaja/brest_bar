@@ -1,10 +1,10 @@
 import React from 'react';
 import { EstablishmentLinks } from './establishments-links';
-import { Button } from './ui/button';
+import { FilterButton } from './filter-button';
 
 export const SideNav: React.FC = () => {
   return (
-    <div className='z-5 w-[80%] overflow-y-scroll bg-[#201f23] md:w-[492px]'>
+    <div className='z-5 w-[80%] overflow-y-scroll bg-[#201f23] md:w-[590px]'>
       <div className='border-b-2 border-[#3d3d3d] px-4 py-4 text-start text-4xl font-bold'>
         Trouver le bar qu&apos;il vous faut{' '}
         <span className='bg-gradient-to-r from-[#c213c7] to-[#b063f2] bg-clip-text text-transparent'>
@@ -17,11 +17,8 @@ export const SideNav: React.FC = () => {
       </div>
       <div className='flex items-center justify-between px-4 py-4 text-start'>
         <h2 className='text-2xl font-semibold'>Explorer</h2>
-        <Button>Filtrer</Button>
+        <FilterButton />
       </div>
     </div>
   );
 };
-
-// c213c7
-// b063f2
