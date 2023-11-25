@@ -22,7 +22,7 @@ export const EstablishmentsCard: React.FC<EstablishmentsCard> = ({
   return (
     <Link
       href={`?filter=${query}`}
-      className={`${isClicked ? 'text-violet-500' : ''} gap-2' flex flex-col`}
+      className={`${isClicked ? 'text-violet-500' : ''} flex flex-col gap-2`}
       onClick={onClick}
     >
       <div className='flex h-full rounded-xl bg-[#2c2c2c] py-8'>

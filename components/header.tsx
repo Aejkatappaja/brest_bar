@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 
 export const Header: React.FC = () => {
   return (
-    <div className='z-10 flex justify-between bg-[#201f23] px-2 py-2 shadow-md shadow-black'>
+    <div className='z-10 flex justify-between bg-[#201f23] px-2 py-2 shadow-sm shadow-black'>
       <Image
         src='/images/brest-bar-logo-1.png'
         width={60}
