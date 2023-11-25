@@ -1,22 +1,30 @@
-import Image from 'next/image';
+'use client';
+
 import React from 'react';
 import { EstablishmentsCard } from './establishments-card';
+import { establishments } from '@/utils/establishments-list';
 
-interface EstablishmentTypeCardProps {}
+export const EstablishmentLinks: React.FC = () => {
+  const [clickedButton, setClickedButton] = React.useState<string | null>(null);
 
-export const EstablishmentLinks: React.FC<
-  EstablishmentTypeCardProps
-> = ({}) => {
-  const establishments = [
-    { image: '/images/cave.png', text: 'Cave' },
-    { image: '/images/brewery.png', text: 'Brasserie' },
-    { image: '/images/bar.png', text: 'Bar' },
-  ];
+  const handleClick = (query: string) => {
+    setClickedButton(query);
+  };
+
   return (
     <div className='grid grid-cols-3 gap-5 pt-6 font-semibold'>
       {establishments.map((item) => {
-        const { image, text } = item;
-        return <EstablishmentsCard key={image} src={image} text={text} />;
+        const { src, text, query } = item;
+        return (
+          <EstablishmentsCard
+            key={src}
+            src={src}
+            text={text}
+            query={query}
+            isClicked={clickedButton === query}
+            onClick={() => handleClick(query)}
+          />
+        );
       })}
     </div>
   );
