@@ -33,10 +33,9 @@ export type IEstablishment = {
 
 export type ITotalEstablishments = { data: IEstablishment[] };
 export async function getEstablishmentsList(
-  limit?: number
-  //sort?: string,
+  limit?: number,
+  search?: string
   //query?: string,
-  //search?: string
 ): Promise<ITotalEstablishments | undefined> {
   const url = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -44,7 +43,7 @@ export async function getEstablishmentsList(
 
   try {
     const res = await fetch(
-      `${url}?limit=${limit}`,
+      `${url}?limit=${limit}&search=${search}`,
 
       {
         next: { revalidate: 0 },
@@ -53,6 +52,7 @@ export async function getEstablishmentsList(
     );
 
     const response: ITotalEstablishments = await res.json();
+    console.log(response);
 
     return response;
   } catch (error: unknown) {
