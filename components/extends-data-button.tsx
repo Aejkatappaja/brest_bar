@@ -1,32 +1,23 @@
 'use client';
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useDataFilterStore } from '@/hooks/useDataFilterStore';
 import React from 'react';
+import { FiPlus } from 'react-icons/fi';
+import { ImPlus } from 'react-icons/im';
 
 interface ExtendsDataButtonProps {}
 
 export const ExtendsDataButton: React.FC<ExtendsDataButtonProps> = ({}) => {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const currentLimit = Number(searchParams.get('limit')) || 5;
-  const createPageURL = (limit: number) => {
-    const params = new URLSearchParams(searchParams);
-    params.set('limit', limit.toString());
-    return `${pathname}?${params.toString()}`;
-  };
-  const router = useRouter();
-
-  console.log(currentLimit, 'currentlimit');
-
+  const { setLimit } = useDataFilterStore();
   const handleNextPage = () => {
-    return router.push(createPageURL(currentLimit + 5));
+    setLimit(5);
   };
   return (
     <button
-      className='rounded-lg bg-[#2c2c2c] px-6 py-2'
+      className='rounded-lg bg-[#2c2c2c] px-14 py-3'
       onClick={handleNextPage}
     >
-      Plus
+      <ImPlus className='text-xs' />
     </button>
   );
 };

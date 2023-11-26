@@ -14,7 +14,16 @@ interface EstablishmentCardProps {
 export const EstablishmentCard: React.FC<EstablishmentCardProps> = ({
   item,
 }) => {
-  const { name, rating, address, user_ratings_total, status } = item;
+  const {
+    name,
+    rating,
+    address,
+    user_ratings_total,
+    status,
+    opening_hours,
+    international_phone_number,
+  } = item;
+
   const stars = generateRatingStars(rating);
   const establishmentType = getEstablishmentType(name);
   const establishmentStatus = getEstablishmentStatus(status);
@@ -29,6 +38,7 @@ export const EstablishmentCard: React.FC<EstablishmentCardProps> = ({
         <p className='flex items-center gap-2'>
           <span className='flex'> {stars}</span> {user_ratings_total} avis{' '}
         </p>
+
         <p className='text-green-600'>{establishmentStatus}</p>
       </div>
 

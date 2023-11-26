@@ -1,8 +1,8 @@
 export const establishmentTypesList = [
-  { keywords: ['Bar', 'bar', 'BAR', 'Pub'], type: 'BAR' },
+  { keywords: ['Bar', 'bar', 'BAR'], type: 'BAR' },
   {
-    keywords: ['Bistrot', 'bistrot', 'Brasserie', 'brasserie', 'Café'],
+    keywords: ['Brasserie', 'brasserie', 'BRASSERIE'],
     type: 'BRASSERIE',
   },
-  { keywords: ['Cave', 'cave', 'Vins'], type: 'CAVE' },
+  { keywords: ['Cave', 'cave', 'CAVE'], type: 'CAVE' },
 ];
