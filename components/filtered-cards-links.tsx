@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { EstablishmentsCard } from './establishments-card';
+import { FilteredCard } from './filtered-card';
 import { establishments } from '@/utils/establishments-list';
 
-export const EstablishmentLinks: React.FC = () => {
+export const FilteredCardsLinks: React.FC = () => {
   const [clickedButton, setClickedButton] = React.useState<string | null>(null);
 
   const handleClick = (query: string) => {
@@ -16,7 +16,7 @@ export const EstablishmentLinks: React.FC = () => {
       {establishments.map((item) => {
         const { src, text, query } = item;
         return (
-          <EstablishmentsCard
+          <FilteredCard
             key={src}
             src={src}
             text={text}
