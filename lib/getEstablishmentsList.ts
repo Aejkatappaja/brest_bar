@@ -31,10 +31,7 @@ export type IEstablishment = {
   type: number[];
 };
 
-export type ITotalEstablishments = {
-  products: IEstablishment[];
-};
-
+export type ITotalEstablishments = { data: IEstablishment[] };
 export async function getEstablishmentsList(
   limit?: number
   //sort?: string,
@@ -43,9 +40,11 @@ export async function getEstablishmentsList(
 ): Promise<ITotalEstablishments | undefined> {
   const url = process.env.NEXT_PUBLIC_BASE_URL;
 
+  console.log(`${url}?limit=${limit}`);
+
   try {
     const res = await fetch(
-      `${url}`,
+      `${url}?limit=${limit}`,
 
       {
         next: { revalidate: 0 },
@@ -53,11 +52,9 @@ export async function getEstablishmentsList(
       }
     );
 
-    const data: ITotalEstablishments = await res.json();
+    const response: ITotalEstablishments = await res.json();
 
-    console.log(data);
-
-    return data;
+    return response;
   } catch (error: unknown) {
     console.error(error);
     throw new Error('failed to fetch data');
