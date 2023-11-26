@@ -20,8 +20,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={(inter.className, 'antialised flex h-screen flex-col')}>
         <Header />
-        <div className='flex h-full'>
-          <SideNav />
+        <div className='flex h-full overflow-hidden'>
           <div className='flex-grow'>{children}</div>
         </div>{' '}
       </body>
