@@ -16,6 +16,11 @@
   }
 }
 
+.custom-scrollbar {
+  --scrollbar-track: #2c2c2c;
+  --scrollbar-thumb: #b066f3;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
