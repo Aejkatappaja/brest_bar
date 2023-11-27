@@ -1,12 +1,18 @@
 import { useDataFilterStore } from '@/hooks/useDataFilterStore';
 import React from 'react';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
+import { useDebouncedCallback } from 'use-debounce';
 
 export const SearchBar: React.FC = () => {
-  const { search, setSearch } = useDataFilterStore();
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-  };
+  const { setSearch } = useDataFilterStore();
+  const handleSearch = useDebouncedCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const inputValue = e.target.value;
+      setSearch(inputValue);
+    },
+    500
+  );
+
   return (
     <div className='relative flex flex-1 flex-shrink-0 items-center'>
       <label
@@ -18,10 +24,9 @@ export const SearchBar: React.FC = () => {
       <input
         placeholder='Rechercher'
         name='search'
-        value={search}
         onChange={handleSearch}
         type='text'
-        className='block w-full rounded-3xl border-2 border-[#313030] bg-[#2c2c2c] from-[#c213c7] to-[#b063f2] py-[9px] pl-10 text-sm font-semibold tracking-wide text-[#909090ae] shadow-md shadow-black outline-none duration-700 placeholder:font-semibold placeholder:text-[#909090ae] focus:bg-gradient-to-r focus:bg-clip-text focus:text-transparent'
+        className='shadow-3d bg-grey w-full rounded-3xl from-[#c213c7] to-[#b063f2] py-[9px] pl-10 text-sm font-semibold tracking-wide outline-none  duration-700 placeholder:font-semibold placeholder:text-[#909090ae] focus:bg-slate-600/30 '
       />
     </div>
   );
