@@ -5,7 +5,6 @@ import Image from 'next/image';
 
 interface FilteredCard {
   src: string;
-  query: string;
   isClicked: boolean;
   onClick: () => void;
   text: string;
@@ -14,7 +13,6 @@ interface FilteredCard {
 export const FilteredCard: React.FC<FilteredCard> = ({
   src,
   text,
-  query,
   isClicked,
   onClick,
 }) => {
@@ -23,9 +21,9 @@ export const FilteredCard: React.FC<FilteredCard> = ({
       <div
         className={`${
           isClicked
-            ? ' bg-gradient-to-b from-[#c213c7]/30 to-[#b063f2]/30 text-transparent shadow-inner shadow-black'
-            : ''
-        } flex h-full rounded-xl bg-[#2c2c2c] py-2 md:py-8 2xl:justify-center 2xl:py-16`}
+            ? 'bg-gradient-to-b from-[#c213c7]/30 to-[#b063f2]/30 text-transparent shadow-inner shadow-black '
+            : 'shadow-md shadow-black'
+        }  flex h-full rounded-xl bg-[#2c2c2c] py-2  md:py-8 2xl:justify-center 2xl:py-16`}
       >
         <Image
           src={src}
@@ -35,7 +33,7 @@ export const FilteredCard: React.FC<FilteredCard> = ({
           className='px-2 md:px-8 2xl:px-12'
         />
       </div>
-      <h4
+      <h3
         className={`text-center ${
           isClicked
             ? 'bg-gradient-to-r from-[#c213c7] to-[#b063f2] bg-clip-text text-transparent'
@@ -43,7 +41,7 @@ export const FilteredCard: React.FC<FilteredCard> = ({
         }`}
       >
         {text}
-      </h4>
+      </h3>
     </div>
   );
 };

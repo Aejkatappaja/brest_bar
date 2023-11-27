@@ -4,10 +4,12 @@ import React from 'react';
 import { FilteredCard } from './filtered-card';
 import { establishments } from '@/utils/establishments-list';
 import { useDataFilterStore } from '@/hooks/useDataFilterStore';
+import { useMapZoomStore } from '@/hooks/useMapZoom';
 
 export const FilteredCardsLinks: React.FC = () => {
   const [clickedButton, setClickedButton] = React.useState<string | null>(null);
   const { setSearch, search } = useDataFilterStore();
+  const { setZoom } = useMapZoomStore();
 
   const handleClick = (query: string) => {
     setClickedButton((prevClickedButton) =>
@@ -22,6 +24,7 @@ export const FilteredCardsLinks: React.FC = () => {
   const handleCardClick = (query: string) => {
     handleClick(query);
     handleSearch(query);
+    setZoom([0, 0]);
   };
 
   return (
@@ -33,7 +36,6 @@ export const FilteredCardsLinks: React.FC = () => {
             key={src}
             src={src}
             text={text}
-            query={query}
             isClicked={clickedButton === query}
             onClick={() => {
               handleCardClick(query);
