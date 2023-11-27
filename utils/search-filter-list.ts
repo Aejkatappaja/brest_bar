@@ -1,4 +1,4 @@
 export const searchFilterList = [
-  { term: 'rating' },
-  { term: 'user_rating_total' },
+  { term: 'rating', title: 'Meilleures Notes' },
+  { term: 'user_rating_total', title: "Nombre d'avis" },
 ];
