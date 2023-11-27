@@ -1,11 +1,9 @@
 'use client';
 
 import MapBox from '@/components/map';
-import { useFetch } from '@/hooks/useFetch';
-import { useMapZoomStore } from '@/hooks/useMapZoom';
+
 import { useUserLocationStore } from '@/hooks/useUserLocationStore';
-import { IEstablishment } from '@/lib/getEstablishmentsList';
-import mapboxgl from 'mapbox-gl';
+
 import 'mapbox-gl/dist/mapbox-gl.css';
 import React from 'react';
 
