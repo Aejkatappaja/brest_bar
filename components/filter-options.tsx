@@ -28,10 +28,11 @@ export const FilterOptions: React.FC = () => {
   return isFilterVisible ? (
     <div className=' flex flex-col justify-start gap-3 px-4 py-2 md:flex-row'>
       {searchFilterList.map((item) => {
-        const { term } = item;
+        const { term, title } = item;
         return (
           <FilterOption
-            text='Meilleurs Notes'
+            key={term}
+            text={title}
             onClick={() => handleOptionClick(term)}
             isClicked={clickedButton === term}
           />
