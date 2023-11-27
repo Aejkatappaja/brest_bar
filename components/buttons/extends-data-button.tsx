@@ -14,7 +14,8 @@ export const ExtendsDataButton: React.FC<ExtendsDataButtonProps> = ({}) => {
   };
   return (
     <button
-      className='rounded-lg bg-[#2c2c2c] px-14 py-3'
+      className='rounded-lg bg-[#2c2c2c] px-14 py-3 shadow-md shadow-black'
+      aria-label='bouton permettant de charger plus de data'
       onClick={handleNextPage}
     >
       <ImPlus className='text-xs' />
