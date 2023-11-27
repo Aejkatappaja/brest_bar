@@ -6,5 +6,4 @@ export const getEstablishmentType = (name: string) => {
       return type;
     }
   }
-  return 'TYPE NON DÉFINI';
 };
