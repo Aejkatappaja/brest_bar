@@ -21,10 +21,6 @@
   --scrollbar-thumb: #b066f3;
 }
 
-* {
-  cursor: default;
-}
-
 .marker {
   background-image: url('/public/beer.svg');
   background-size: cover;
@@ -32,6 +28,26 @@
   height: 20px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.text-rainbow {
+  @apply bg-gradient-to-r from-[#c213c7] to-[#b063f2] bg-clip-text text-transparent;
+}
+
+.bg-rainbow {
+  @apply bg-gradient-to-r from-[#c213c7] to-[#b063f2];
+}
+
+.shadow-3d {
+  @apply shadow-md shadow-black;
+}
+
+.disappear {
+  @apply -ml-[20px] origin-left translate-x-[-100%] duration-[1000ms];
+}
+
+.appear {
+  @apply translate-x-0 duration-[1000ms];
 }
 
 body {
