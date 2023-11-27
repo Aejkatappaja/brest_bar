@@ -2,6 +2,7 @@
 
 import { useVisibilityControlStore } from '@/hooks/useVisibilityControlStore';
 import React from 'react';
+import { ToastButton } from './buttons';
 
 interface ModalProps {}
 
@@ -14,9 +15,11 @@ export const Modal: React.FC<ModalProps> = ({}) => {
       onClick={() => setIsModalVisible(!isModalVisible)}
     >
       <div
-        className='h-3/4 w-80 bg-white md:h-1/2 md:w-1/2'
+        className='flex h-1/5 w-80 items-center justify-center rounded-3xl bg-[#201f23] shadow-md shadow-black md:h-1/5 md:w-1/4 md:rounded-2xl'
         onClick={(e) => e.stopPropagation()}
-      ></div>
+      >
+        <ToastButton />
+      </div>
     </div>
   ) : null;
 };
