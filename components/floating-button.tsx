@@ -1,19 +1,18 @@
 'use client';
-import { FaArrowRight } from 'react-icons/fa';
+
 import { useVisibilityControlStore } from '@/hooks/useVisibilityControlStore';
+import { FaArrowRight } from '@/utils/icons';
 import React from 'react';
 
-interface FloatingButtonProps {}
-
-export const FloatingButton: React.FC<FloatingButtonProps> = ({}) => {
+export const FloatingButton: React.FC = () => {
   const { isSideNavVisible, setIsSideNavVisible } = useVisibilityControlStore();
   return (
     !isSideNavVisible && (
       <button
-        className='absolute left-[-3] top-[10rem] flex h-20 w-10 items-center justify-center rounded-r-xl bg-[#2c2c2c] shadow-md shadow-black'
+        className='bg-grey shadow-3d absolute left-[-3] top-[16rem] flex h-20 w-10 cursor-pointer items-center justify-center rounded-r-xl md:top-[12rem]'
         onClick={() => setIsSideNavVisible(!isSideNavVisible)}
       >
-        <FaArrowRight />
+        <FaArrowRight className='cursor-pointer' />
       </button>
     )
   );

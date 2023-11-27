@@ -9,7 +9,7 @@ export const HideNavButton: React.FC = () => {
   };
   return (
     <button
-      className='border-lg flex items-center justify-center rounded-lg bg-[#2c2c2c] px-4 py-3 shadow-md shadow-black'
+      className='border-lg shadow-3d flex items-center justify-center rounded-lg bg-[#2c2c2c] px-4 py-3 active:shadow-inner'
       onClick={handleHideNavClick}
     >
       <FaArrowLeft />

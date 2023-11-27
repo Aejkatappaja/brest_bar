@@ -1,6 +1,6 @@
 import { useMapZoomStore } from '@/hooks/useMapZoom';
+import { IoEyeOutline } from '@/utils/icons';
 import React from 'react';
-import { IoEyeOutline } from 'react-icons/io5';
 
 interface zoomOnMapButtonProps {
   coordinates: [number, number];
@@ -16,7 +16,7 @@ export const ZoomOnMapButton: React.FC<zoomOnMapButtonProps> = ({
   };
   return (
     <button
-      className=' mr-1 rounded-full border-purple-500 bg-purple-500/30 px-2 py-2 shadow-md shadow-black'
+      className=' shadow-3d mr-1 rounded-full border-purple-500 bg-purple-500/30 px-2 py-2 active:shadow-inner'
       aria-label="Bouton permettant de zoomer vers l'établissement stué sur MapBox"
       onClick={() => handleClick(coordinates)}
     >

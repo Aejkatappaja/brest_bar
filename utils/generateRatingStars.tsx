@@ -1,5 +1,4 @@
-import { FaStar } from 'react-icons/fa6';
-import { FaStarHalfStroke } from 'react-icons/fa6';
+import { FaStar, FaStarHalfStroke } from './icons';
 
 export const generateRatingStars = (note: string) => {
   let array = [];

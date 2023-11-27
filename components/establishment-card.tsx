@@ -1,7 +1,8 @@
 import { IEstablishment } from '@/lib/getEstablishmentsList';
-import { GiPathDistance } from 'react-icons/gi';
+
 import React from 'react';
 import { generateRatingStars, getEstablishmentType } from '@/utils';
+import { GiPathDistance } from '@/utils/icons';
 import { ZoomOnMapButton } from './buttons';
 
 interface EstablishmentCardProps {
@@ -18,10 +19,9 @@ export const EstablishmentCard: React.FC<EstablishmentCardProps> = ({
 
   const stars = generateRatingStars(rating);
   const establishmentType = getEstablishmentType(name);
-  // const establishmentStatus = getEstablishmentStatus(status);
 
   return (
-    <div className='flex h-full w-full items-center justify-between overflow-hidden rounded-2xl bg-[#2c2c2c] px-6 py-4 shadow-md shadow-black'>
+    <div className='shadow-3d bg-grey flex h-full w-full items-center justify-between overflow-hidden rounded-2xl px-6 py-4'>
       <div className='space-y-5 '>
         <div className='space-y-1'>
           <p className='font-bold text-purple-500'>{establishmentType}</p>
@@ -35,7 +35,7 @@ export const EstablishmentCard: React.FC<EstablishmentCardProps> = ({
           </p>
         </div>
         {distance && (
-          <div className='font-sm flex w-36 items-center justify-center gap-2 rounded-2xl bg-blue-600/20 py-[0.20rem] text-center text-blue-300/80 shadow-md shadow-black'>
+          <div className='font-sm shadow-3d flex w-36 items-center justify-center gap-2 rounded-2xl bg-blue-600/20 py-[0.20rem] text-center text-blue-300/80'>
             <GiPathDistance /> {distance} KM
           </div>
         )}

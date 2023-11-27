@@ -13,8 +13,9 @@ export default function EstablishmentsList() {
   const { userLocation } = useUserLocationStore();
   const establishments = useFetch();
   const { apiData } = establishments;
+  const { isLoading } = establishments;
 
-  return establishments.isLoading ? (
+  return isLoading ? (
     <Loader />
   ) : (
     <div className='space-y-4 px-4 py-4'>
@@ -38,13 +39,7 @@ export default function EstablishmentsList() {
       })}
 
       <div className='flex items-center justify-center pb-6'>
-        {apiData?.length ? (
-          <ExtendsDataButton />
-        ) : (
-          <h3 className='bg-gradient-to-b from-[#c213c7] to-[#b063f2] bg-clip-text pt-6 text-xl font-bold tracking-wide text-transparent'>
-            Aucun Résultat
-          </h3>
-        )}
+        {apiData?.length ? <ExtendsDataButton /> : <Loader />}
       </div>
     </div>
   );
