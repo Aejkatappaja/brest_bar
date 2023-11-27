@@ -16,6 +16,7 @@ const config: Config = {
       backgroundColor: {
         grey: '#2c2c2c',
       },
+      colors: { dgrey: '#3d3d3d', grey: '#2c2c2c' },
     },
   },
   plugins: [require('tailwind-scrollbar')],
