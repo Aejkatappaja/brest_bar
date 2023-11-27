@@ -1,14 +1,12 @@
 'use client';
 
-import MapBox from '@/components/map';
-
-import { useUserLocationStore } from '@/hooks/useUserLocationStore';
-
 import 'mapbox-gl/dist/mapbox-gl.css';
+import MapBox from '@/components/map';
 import React from 'react';
+import { useUserLocationStore } from '@/hooks/zustand/useUserLocationStore';
 
 export default function Home() {
-  const { setUserLocation, userLocation } = useUserLocationStore();
+  const { setUserLocation } = useUserLocationStore();
 
   React.useEffect(() => {
     if ('geolocation' in navigator) {

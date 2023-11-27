@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
+import { Inter } from 'next/font/google';
 import { Header } from '@/components/header';
-import { SideNav } from '@/components/side-nav';
-import { Modal } from '@/components/modal';
 import { Toaster } from 'sonner';
-import { FloatingButton } from '@/components/floating-button';
+import { Modal } from '@/components/modal';
+import { SideNav } from '@/components/side-nav';
+import { FloatingButton } from '@/components/side-nav/button';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,7 +27,7 @@ export default function RootLayout({
         <div className='flex h-screen'>
           <SideNav />
           <div className='flex-grow'>{children}</div>
-        </div>{' '}
+        </div>
         <FloatingButton />
         <Modal />
       </body>
