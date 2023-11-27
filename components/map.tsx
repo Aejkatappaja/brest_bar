@@ -46,7 +46,7 @@ export default function MapBox() {
         accessToken: process.env.NEXT_PUBLIC_MAPBOX_TOKEN,
         style: 'mapbox://styles/mapbox/dark-v11',
         center: [-4.4834526, 48.3831122],
-        zoom: 9.5,
+        zoom: zoom[0] === 0 ? 9.5 : 22,
       });
 
       setMap(mapboxMap);
@@ -76,7 +76,7 @@ export default function MapBox() {
           {
             zoom[0] !== 0 &&
               mapboxMap.flyTo({
-                duration: 4000,
+                duration: 350,
                 center: zoom,
                 zoom: 16,
                 essential: true,
@@ -91,12 +91,12 @@ export default function MapBox() {
     };
 
     fetchData();
-  }, [apiData, zoom, search]);
+  }, [zoom, apiData]);
 
   return (
     <>
       {loading && (
-        <div className='flex h-full w-full items-center justify-center bg-[#1f1f1f]'>
+        <div className='flex h-full w-full items-center justify-center bg-[#1f1f1f] pl-[35rem] pt-10'>
           <Loader />
         </div>
       )}
