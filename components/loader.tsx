@@ -1,9 +1,10 @@
 import React from 'react';
 
-interface LoaderProps {}
-
-export const Loader: React.FC<LoaderProps> = ({}) => {
+export const Loader: React.FC = () => {
   return (
-    <div className='h-16 w-16 animate-ping rounded-full bg-violet-500'></div>
+    <div className='flex h-16 w-16 animate-ping items-center justify-center rounded-full bg-violet-500 text-sm font-light'>
+      {' '}
+      <h1>Loading</h1>
+    </div>
   );
 };
