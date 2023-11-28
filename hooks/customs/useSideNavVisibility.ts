@@ -1,4 +1,4 @@
-export interface IHandleModalClick {
+interface IHandleModalClick {
   isSideNavVisible: boolean;
   setIsSideNavVisible: (isSideNavVisible: boolean) => void;
   handleSideNavClick: () => void;
